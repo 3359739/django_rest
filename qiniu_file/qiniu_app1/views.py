@@ -45,3 +45,8 @@ def file_upload(request):
 def file_download(request):
     img_qiniu = UploadFileImg.objects.get(pk=7)
     return render(request, "imgs.html", {"uploadFileImg": img_qiniu})
+from . import models
+def file_get(req):
+    img_qiniu = models.UploadFileImg.objects.raw("select * from img ")
+    print(img_qiniu[0].file)
+    return  HttpResponse("123456")
