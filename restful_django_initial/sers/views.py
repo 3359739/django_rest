@@ -198,6 +198,7 @@ class automaic_utensil_viewset3(ModelViewSet):
     queryset = library.objects.all()
     serializer_class = automaic_utensil
 
+
 #测试案例
 class test_day1(ModelViewSet):
     queryset = library.objects.all()

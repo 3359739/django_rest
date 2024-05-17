@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin管理的文件显示</title>
+</head>
+<body>
+    <ul>
+        <li>
+           备注：{{ uploadFileImg.remark }}
+        </li>
+        <li>
+           图片名：{{ uploadFileImg.img.name }}
+        </li>
+        <li>
+            <img src="{{ uploadFileImg.img.url }}">
+        </li>
+        <li>
+            <a href="{{uploadFileImg.file.url }}">{{ uploadFileImg.file.name }}</a>
+        </li>
+    </ul>
+</body>
+</html>

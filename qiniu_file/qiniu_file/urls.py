@@ -1,5 +1,5 @@
 """
-URL configuration for restful_django_initial project.
+URL configuration for qiniu_file project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
-from rest_framework.documentation import include_docs_urls
-
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls.conf import include
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",include('restful_test.urls')),
-    path("",include('sers.urls')),
-    path('docs/', include_docs_urls(title='API接口文档', description='xxx描述'))
+    path("",include("qiniu_app1.urls")),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+document_root=settings.MEDIA_ROOT)
